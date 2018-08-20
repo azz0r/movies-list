@@ -1,9 +1,16 @@
 import React, { Component } from "react";
-import styled from "styled-components";
+import { compose } from "redux";
+import { connect } from "react-redux";
 
-import { H1, H2, Paragraph, Wrapper } from "../../styles/";
+import { requestMovies } from "../../store/actions";
+import { H1, Wrapper } from "../../styles/";
+
+import Movies from "../../components/movies";
 
 class Landing extends Component {
+  componentWillMount() {
+    this.props.dispatch(requestMovies());
+  }
   render() {
     return (
       <Wrapper>
@@ -11,16 +18,17 @@ class Landing extends Component {
           <H1>Movie Listings</H1>
         </header>
         <section>
-          <article>
-            <H2>Movie Title</H2>
-            <Paragraph>
-              Movie description Movie description Movie description
-            </Paragraph>
-          </article>
+          <Movies collection={this.props.collection} />
         </section>
       </Wrapper>
     );
   }
 }
 
-export default Landing;
+const enhance = compose(
+  connect(state => ({
+    collection: state.collection
+  }))
+);
+
+export default enhance(Landing);
