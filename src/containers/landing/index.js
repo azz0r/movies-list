@@ -1,21 +1,26 @@
 import React, { Component } from "react";
+import styled from "styled-components";
 
-class App extends Component {
+import { H1, H2, Paragraph, Wrapper } from "../../styles/";
+
+class Landing extends Component {
   render() {
     return (
-      <section>
+      <Wrapper>
         <header>
-          <h1>Movie Listings</h1>
+          <H1>Movie Listings</H1>
         </header>
         <section>
           <article>
-            <h2>Movie Title</h2>
-            <p>Movie description Movie description Movie description</p>
+            <H2>Movie Title</H2>
+            <Paragraph>
+              Movie description Movie description Movie description
+            </Paragraph>
           </article>
         </section>
-      </section>
+      </Wrapper>
     );
   }
 }
 
-export default App;
+export default Landing;
