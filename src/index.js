@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 
 import configureStore from "./store";
-import Landing from "./containers/landing";
+import Landing from "./components/landing";
 import registerServiceWorker from "./registerServiceWorker";
 
 const store = configureStore();
