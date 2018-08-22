@@ -5,13 +5,13 @@ const BaseHeader = styled.span`
 `;
 
 export const H1 = BaseHeader.withComponent("h1").extend`
-  font-size: ${props => props.theme.fontSizes.large};
+  font-size: x-large;
 `;
 
 export const H2 = BaseHeader.withComponent("h1").extend`
-  font-size: ${props => props.theme.fontSizes.medium};
+  font-size: large;
 `;
 
 export const Paragraph = styled.p`
-  font-size: ${props => props.theme.fontSizes.small};
+  font-size: medium;
 `;
