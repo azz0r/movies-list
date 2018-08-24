@@ -1,10 +1,6 @@
-import React, { Component } from "react";
-import { compose } from "redux";
-import { connect } from "react-redux";
+import React from "react";
 
-import { requestMovies } from "../../store/actions";
 import { H1, Wrapper } from "../../styles/";
-
 import Movies from "../movies";
 
 const Landing = ({ collection = [] }) => (
