@@ -8,9 +8,11 @@ const Landing = ({ collection = [] }) => (
     <header>
       <H1>Movie Listings</H1>
     </header>
-    <section>
-      <Movies collection={collection} />
-    </section>
+    {collection ? (
+      <section>
+        <Movies collection={collection} />
+      </section>
+    ) : null}
   </Wrapper>
 );
 
