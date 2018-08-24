@@ -6,9 +6,8 @@ export const Wrapper = styled.section`
   flex-shrink: 1;
   flex-basis: auto;
   flex-direction: column;
-  font-size: ${props => props.theme.fontSizes.large};
-  font-family: ${props => props.theme.palette.main.bg};
-  color: ${props => props.theme.palette.main.color};
-  background-color: ${props => props.theme.palette.main.bg};
-  padding: ${props => props.theme.spacings.small};
+  font-size: large;
+  font-family: verdana;
+  color: black;
+  padding: 0.5rem;
 `;

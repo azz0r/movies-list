@@ -1,4 +1,4 @@
-import { FETCH_MOVIES } from "./types";
+import { MOVIES_SET } from "./types";
 
 const defaultState = {
   filters: [],
@@ -10,10 +10,13 @@ export default (state = defaultState, action) => {
   state = Object.assign(defaultState, state);
 
   switch (action.type) {
-    case FETCH_MOVIES:
-      state = action.payload;
+    default:
+      break;
+    case MOVIES_SET:
+      state.collection = action.payload;
       break;
   }
 
+  console.log(state);
   return state;
 };
