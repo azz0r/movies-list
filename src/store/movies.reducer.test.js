@@ -32,16 +32,16 @@ const action = {
   payload: []
 };
 
-describe("given a movies reducer", () => {
+describe("given a Movies reducer", () => {
   let activeReducer;
 
   before(() => (activeReducer = reducer(undefined, action)));
 
-  it("should return the initial state (no items)", () => {
+  it("should return the initial state (no Movies)", () => {
     expect(activeReducer.collection).to.have.length(0);
   });
 
-  describe("when its given 3 items", () => {
+  describe("when its given 3 Movies", () => {
     before(() => {
       const action = {
         type: types.MOVIES_SET,
@@ -50,7 +50,7 @@ describe("given a movies reducer", () => {
       activeReducer = reducer(activeReducer, action);
     });
 
-    it("should return the initial state", () => {
+    it("should return 3 Movies on the collection", () => {
       expect(activeReducer.collection).to.have.length(3);
     });
   });
