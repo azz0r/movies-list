@@ -1,11 +1,15 @@
 import React from "react";
 
-import { MoviesWrapper } from "./styled";
+import { MoviesWrapper, MovieItem } from "./styled";
 import Movie from "./movie";
 
 const Movies = ({ collection = [] }) => (
   <MoviesWrapper>
-    {collection.map(item => <Movie key={item.id} {...item} />)}
+    {collection.map(item => (
+      <MovieItem key={item.id}>
+        <Movie {...item} />
+      </MovieItem>
+    ))}
   </MoviesWrapper>
 );
 
