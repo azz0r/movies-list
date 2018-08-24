@@ -1,6 +1,6 @@
 import produce from "immer";
 
-import { MOVIES_SET, MOVIES_ERROR } from "./types";
+import { MOVIES_SET, MOVIES_ERROR } from "../types";
 
 const defaultState = {
   collection: []

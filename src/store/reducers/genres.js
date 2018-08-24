@@ -1,6 +1,6 @@
 import produce from "immer";
 
-import { GENRES_SET, GENRES_ERROR } from "./types";
+import { GENRES_SET, GENRES_ERROR } from "../types";
 
 const defaultState = {
   collection: []

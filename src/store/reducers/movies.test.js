@@ -4,23 +4,26 @@ import { expect } from "chai";
 import { configure, shallow } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 
-import reducer from "./genres.reducer";
-import * as types from "./types";
+import reducer from "./movies";
+import * as types from "../types";
 
 configure({ adapter: new Adapter() });
 
 const defaultModels = [
   {
-    id: "1",
-    name: "drama"
+    title: "model 1",
+    overview: "overview 1",
+    backdrop_path: "/1"
   },
   {
-    id: "2",
-    name: "action"
+    title: "model 2",
+    overview: "overview 2",
+    backdrop_path: "/2"
   },
   {
-    id: "3",
-    name: "horror"
+    title: "model 3",
+    overview: "overview 3",
+    backdrop_path: "/3"
   }
 ];
 
@@ -29,25 +32,25 @@ const action = {
   payload: []
 };
 
-describe("Given a Genres reducer", () => {
+describe("Given a Movies reducer", () => {
   let activeReducer;
 
   before(() => (activeReducer = reducer(undefined, action)));
 
-  it("should return the initial state (no Genres)", () => {
+  it("should return the initial state (no Movies)", () => {
     expect(activeReducer.collection).to.have.length(0);
   });
 
-  describe(`When its given ${defaultModels.length} Genres`, () => {
+  describe(`When its given ${defaultModels.length} Movies`, () => {
     before(() => {
       const action = {
-        type: types.GENRES_SET,
-        payload: { genres: defaultModels }
+        type: types.MOVIES_SET,
+        payload: { results: defaultModels }
       };
       activeReducer = reducer(activeReducer, action);
     });
 
-    it(`should return ${defaultModels.length} Genres on the collection`, () => {
+    it(`should return ${defaultModels.length} Movies on the collection`, () => {
       expect(activeReducer.collection).to.have.length(defaultModels.length);
     });
   });
