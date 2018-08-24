@@ -29,7 +29,7 @@ const action = {
   payload: []
 };
 
-describe("given a Genres reducer", () => {
+describe("Given a Genres reducer", () => {
   let activeReducer;
 
   before(() => (activeReducer = reducer(undefined, action)));
@@ -38,7 +38,7 @@ describe("given a Genres reducer", () => {
     expect(activeReducer.collection).to.have.length(0);
   });
 
-  describe("when its given 3 Genres", () => {
+  describe(`When its given ${defaultModels.length} Genres`, () => {
     before(() => {
       const action = {
         type: types.GENRES_SET,
@@ -47,8 +47,8 @@ describe("given a Genres reducer", () => {
       activeReducer = reducer(activeReducer, action);
     });
 
-    it("should return 3 Genres on the collection", () => {
-      expect(activeReducer.collection).to.have.length(3);
+    it(`should return ${defaultModels.length} Genres on the collection`, () => {
+      expect(activeReducer.collection).to.have.length(defaultModels.length);
     });
   });
 });

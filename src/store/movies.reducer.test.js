@@ -32,7 +32,7 @@ const action = {
   payload: []
 };
 
-describe("given a Movies reducer", () => {
+describe("Given a Movies reducer", () => {
   let activeReducer;
 
   before(() => (activeReducer = reducer(undefined, action)));
@@ -41,7 +41,7 @@ describe("given a Movies reducer", () => {
     expect(activeReducer.collection).to.have.length(0);
   });
 
-  describe("when its given 3 Movies", () => {
+  describe(`When its given ${defaultModels.length} Movies`, () => {
     before(() => {
       const action = {
         type: types.MOVIES_SET,
@@ -50,8 +50,8 @@ describe("given a Movies reducer", () => {
       activeReducer = reducer(activeReducer, action);
     });
 
-    it("should return 3 Movies on the collection", () => {
-      expect(activeReducer.collection).to.have.length(3);
+    it(`should return ${defaultModels.length} Movies on the collection`, () => {
+      expect(activeReducer.collection).to.have.length(defaultModels.length);
     });
   });
 });
