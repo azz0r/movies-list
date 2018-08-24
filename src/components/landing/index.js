@@ -7,7 +7,7 @@ import Landing from "./landing";
 
 const enhance = compose(
   connect(state => ({
-    collection: state.collection
+    collection: state.movies.collection
   })),
   lifecycle({
     componentWillMount() {
