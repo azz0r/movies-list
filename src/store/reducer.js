@@ -1,21 +1,10 @@
-import produce from "immer";
+import { combineReducers } from "redux";
+import movies from "./movies.reducer";
+import genres from "./genres.reducer";
 
-import { MOVIES_SET } from "./types";
+const rootReducer = combineReducers({
+  movies,
+  genres
+});
 
-const defaultState = {
-  filters: [],
-  sortBy: "popularity",
-  collection: []
-};
-
-export default (state = defaultState, action) =>
-  produce(state, draft => {
-    switch (action.type) {
-      default:
-        break;
-      case MOVIES_SET:
-        draft.collection = action.payload;
-        break;
-    }
-    return draft;
-  });
+export default rootReducer;
