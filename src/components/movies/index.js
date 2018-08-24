@@ -1,9 +1,12 @@
-import React from "react";
+import { compose } from "recompose";
+import { connect } from "react-redux";
 
-import Movie from "./movie";
+import Movies from "./movies";
 
-const Movies = ({ collection = [] }) => (
-  <section>{collection.map(item => <Movie key={item.id} {...item} />)}</section>
+const enhance = compose(
+  connect(state => ({
+    collection: state.movies.collection
+  }))
 );
 
-export default Movies;
+export default enhance(Movies);
