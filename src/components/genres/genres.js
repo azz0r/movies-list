@@ -1,7 +1,11 @@
 import React from "react";
 
+import { GenresWrapper, GenreItem } from "./styled";
+
 const Genres = ({ collection = [] }) => (
-  <ul>{collection.map(({ id, name }) => <li key={id}>{name}</li>)}</ul>
+  <GenresWrapper>
+    {collection.map(({ id, name }) => <GenreItem key={id}>{name}</GenreItem>)}
+  </GenresWrapper>
 );
 
 export default Genres;
